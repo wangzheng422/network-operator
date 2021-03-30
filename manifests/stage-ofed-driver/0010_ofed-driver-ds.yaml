@@ -65,6 +65,9 @@ spec:
               mountPropagation: Bidirectional
             - name: etc-network
               mountPath: /etc/network
+            - name: dev
+              mountPath: /dev
+              mountPropagation: Bidirectional
           startupProbe:
             exec:
               command:
@@ -95,6 +98,9 @@ spec:
         - name: etc-network
           hostPath:
             path: /etc/network
+        - name: dev
+          hostPath:
+            path: /dev
       nodeSelector:
         feature.node.kubernetes.io/pci-15b3.present: "true"
         feature.node.kubernetes.io/system-os_release.ID: {{ .RuntimeSpec.OSName }}
