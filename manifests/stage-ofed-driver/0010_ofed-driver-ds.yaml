@@ -67,7 +67,7 @@ spec:
               mountPath: /etc/network
             - name: dev
               mountPath: /dev
-              mountPropagation: Bidirectional
+              mountPropagation: HostToContainer
           startupProbe:
             exec:
               command:
